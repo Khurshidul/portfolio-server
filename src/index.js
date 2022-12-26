@@ -5,13 +5,17 @@ const app = express();
 const blogs = require("./routes/blog");
 
 mongoose
-  .connect("mongodb://localhost/portfolio")
+  .connect("mongodb+srv://portfolio:port1234@cluster0.pxqzsrt.mongodb.net/?retryWrites=true&w=majority")
   .then(() => console.log("server successfully connected"))
   .catch(err => console.error("something is wrong...", err.message));
 
 app.use(cors());
 app.use(express.json());
 app.use("/blogs", blogs);
+
+
+
+
 
 const port = process.env.PORT || 1000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
