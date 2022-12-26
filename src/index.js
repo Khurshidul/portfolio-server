@@ -11,7 +11,7 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
-app.use("/blog", blogs);
+app.use("/blogs", blogs);
 
 const port = process.env.PORT || 1000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

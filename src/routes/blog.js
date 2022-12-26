@@ -3,8 +3,12 @@ const express = require("express");
 const router = express.Router();
 const ObjectId = require("mongodb").ObjectId;
 router.get("/", async (req, res) => {
-  const blog = await Blog.find().sort("title");
-  res.send(blog);
+  try {
+    const blog = await Blog.find().sort("title");
+    res.send(blog);
+  } catch (error) {
+    console.error(error);
+  }
 });
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
