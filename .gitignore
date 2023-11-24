@@ -1,3 +1,4 @@
+PORT=1000
 #Node modules
 /node_modules
 # Logs
